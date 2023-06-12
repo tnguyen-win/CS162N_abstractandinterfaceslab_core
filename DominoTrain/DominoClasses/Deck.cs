@@ -12,7 +12,7 @@ namespace DominoClasses {
 			for (int value = 1; value <= 13; value++) for (int suit = 1; suit <= 4; suit++) dominoes.Add(new Domino(suit, value));
 		}
 
-		public int NumCards {
+		public int NumDominoes {
 			get => dominoes.Count;
 		}
 
@@ -39,8 +39,8 @@ namespace DominoClasses {
 		public void Shuffle() {
 			Random gen = new Random();
 
-			for (int i = 0; i < NumCards; i++) {
-				int rnd = gen.Next(0, NumCards);
+			for (int i = 0; i < NumDominoes; i++) {
+				int rnd = gen.Next(0, NumDominoes);
 
 				Domino c = dominoes[rnd];
 

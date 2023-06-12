@@ -23,18 +23,23 @@ namespace DominoClasses {
 
 		public void Add(Domino d) => dominoes.Add(d);
 
-		protected bool IsPlayable(Domino d, out bool mustFlip) {
+		protected bool IsPlayable(Domino d, out bool mustFlip) {;
+			if (d.Side1 == LastDomino.Side1 || d.Side1 == LastDomino.Side2) {
+				mustFlip = false;
+				return true;
+			}
+			if (d.Side2 == LastDomino.Side2 || d.Side2 == LastDomino.Side2) {
+				mustFlip = true;
+				return true;
+			}
 			mustFlip = false;
-
-			if (mustFlip) d.Flip();
-
-			return PlayableValue != -1;
+			return false;
 		}
 
-		public abstract void IsPlayable();
+		public abstract bool IsPlayable(Hand h, Domino d, out bool mustFlip);
 
 		public void Play(Hand h, Domino d) {
-			if (IsPlayable(d, out bool mustFlip)) {
+			if (IsPlayable(h, d, out bool mustFlip)) {
 				if (mustFlip) d.Flip();
 
 				Add(d);

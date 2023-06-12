@@ -1,7 +1,6 @@
 ﻿using System;
 
 namespace DominoClasses {
-	//public abstract class Domino : IComparable<Domino> {
 	public class Domino {
 		private int side1;
 		private int side2;
@@ -50,10 +49,5 @@ namespace DominoClasses {
 		public override string ToString() {
 			return string.Format($"Side 1: {side1} | Side 2: {side2}");
 		}
-
-		//public int CompareTo(Domino other) {
-		//	return string.Compare(this.Score, other.Score, StringComparison.OrdinalIgnoreCase);
-		//	return other.Score;
-		//}
 	}
 }

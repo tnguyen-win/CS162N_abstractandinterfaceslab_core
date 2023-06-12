@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominoClasses {
 	public class MexicanTrain : Train {
-		public override void IsPlayable() {
-			throw new NotImplementedException();
-		}
-
-		//public override bool IsPlayable(Hand h, Domino d, out bool mustFlip) {
-
-		//}
+		public override bool IsPlayable(Hand h, Domino d, out bool mustFlip) => IsPlayable(d, out mustFlip);
 
 		public MexicanTrain() : base() { }
 
